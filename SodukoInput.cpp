@@ -1,9 +1,4 @@
 #include"stdafx.h"
-#include<iostream>
-#include<fstream>
-#include<vector>
-#include<string>
-#include"SodukoInput.h"
 using namespace std;
 vector<int(*)[9]> SodukoInput(char * filename)
 {

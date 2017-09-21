@@ -13,3 +13,9 @@
 
 
 // TODO: 在此处引用程序需要的其他头文件
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include "SodukoInput.h"
+#include "SudokuSolve.h"
