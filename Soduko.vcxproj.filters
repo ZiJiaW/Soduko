@@ -30,6 +30,12 @@
     <ClInclude Include="SudokuSolve.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SudokuMaker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SudokuOutput.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +48,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SudokuSolve.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SudokuMaker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SudokuOutput.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

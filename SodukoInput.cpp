@@ -9,7 +9,7 @@ vector<int(*)[9]> SodukoInput(char * filename)
 	int(*temp)[9] = new int[9][9];
 	if (!file.is_open())
 	{
-		cout << "fail to open file!" << endl;
+		cerr << "fail to open file!" << endl;
 		return ProblemSet;
 	}
 	while (!file.eof())
@@ -37,4 +37,15 @@ vector<int(*)[9]> SodukoInput(char * filename)
 	}
 	file.close();
 	return ProblemSet;
+}
+bool IsDigit(char *in)
+{
+    int n = sizeof(in) / sizeof(char);
+    bool r = true;
+    //cout << atoi(in) << endl;
+    for (int i = 0; i < n&&in[i] != '\0'; ++i)
+    {
+        r &= (in[i] >= '0'&&in[i] <= '9');
+    }
+    return r;
 }

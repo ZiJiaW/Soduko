@@ -15,40 +15,61 @@
 using namespace std;
 int main(int argc, char *argv[])
 {
-	/*
+	
 	if (argc != 3)
 	{
-		cout << "illegal input" << endl;
-		return -1;
-	}*/
-//	if (strcmp(argv[1], "-s"))
-	{
-		vector<int(*)[9]> ProblemSet = SodukoInput("e:\\visual studio 2017 project\\Soduko\\Soduko\\sudoku.txt");
-		for (auto p : ProblemSet)
-		{
-			for (int i = 0; i < 9; ++i)
-			{
-				for (int j = 0; j < 9; ++j)
-				{
-					if (j == 8)
-						cout << p[i][j] << endl;
-					else
-						cout << p[i][j] << ' ';
-				}
-			}
-			cout << endl;
-			SudokuSolve solution;
-			solution.ProblemInit(p);
-			//cout << solution.check(0, 1, 5) << endl;
-			if (!solution.Solve(0, 0))
-			{
-				cout << "No Solution!" << endl;
-				return 0;
-			}
-			solution.showSolution();
-			cout << endl;
-		}
+		cout << "illegal input!" << endl;
+		return 0;
 	}
+ //   cout << strcmp(argv[1], "-s") << endl;
+    if (strcmp(argv[1], "-s") == 0)
+    {
+ //       cout << "ok" << endl;
+        vector<int(*)[9]> ProblemSet = SodukoInput(argv[2]);//"-s" "e:\\visual studio 2017 project\\Soduko\\Soduko\\sudokuProblem.txt"
+        for (auto p = ProblemSet.begin(); p != ProblemSet.end(); ++p)
+        {
+ //           cout << "ok" << endl;
+            /*
+            for (int i = 0; i < 9; ++i)
+            {
+                for (int j = 0; j < 9; ++j)
+                {
+                    if (j == 8)
+                        cout << (*p)[i][j] << endl;
+                    else
+                        cout << (*p)[i][j] << ' ';
+                }
+            }
+            */
+            //cout << endl;
+            SudokuSolve solution;
+            solution.ProblemInit(*p);
+            //cout << solution.check(0, 1, 5) << endl;
+            if (!solution.Solve(0, 0))
+            {
+                cout << "No Solution!" << endl;
+                return 0;
+            }
+            if (p + 1 == ProblemSet.end())
+                SudokuOutput(solution.getSolution(), false);
+            else
+                SudokuOutput(solution.getSolution(), true);
+        }
+    }
+    else if (strcmp(argv[1], "-c") == 0)//"-c" "20"
+    {
+//        cout << "ok" << endl;
+        if (!IsDigit(argv[2]))
+        {
+            cout << "illegal input!" << endl;
+            return 0;
+        }
+        SudokuMaker r;
+        r.RequestInit(atoi(argv[2]));
+        r.fill(0, 1);
+    }
+    else
+        cout << "illegal input!" << endl;
 	return 0;
 }
 

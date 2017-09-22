@@ -17,5 +17,8 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <cstdlib>
 #include "SodukoInput.h"
 #include "SudokuSolve.h"
+#include "SudokuMaker.h"
+#include "SudokuOutput.h"
