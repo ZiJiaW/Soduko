@@ -1,4 +1,11 @@
-﻿  SudokuMaker.cpp
+﻿  stdafx.cpp
+e:\visual studio 2017 project\soduko\soduko\stdafx.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\visual studio 2017 project\soduko\soduko\stdafx.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\visual studio 2017 project\soduko\soduko\targetver.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  SudokuSolve.cpp
+  SudokuOutput.cpp
+  SudokuMaker.cpp
+  SodukoInput.cpp
   Soduko.cpp
 e:\visual studio 2017 project\soduko\soduko\soduko.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   正在生成代码...

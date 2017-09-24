@@ -5,12 +5,12 @@
 using namespace std;
 class SudokuMaker {
 public:
-    bool fill(int r, int l, fstream &file);
-    bool check(int r, int l, int num);
-    void RequestInit(int n);
+    bool fill(int r, int l);//递归填数
+    bool check(int r, int l, int num);//判断在[r,l]处放入num是否符合数独规则
+    void RequestInit(int n);//初始化需求
 private:
-    int maxnum;
-    int count;
-    int M[9][9];
+    int maxnum;//需要生成的数独终局数
+    int count;//当前已生成的数独终局数
+    int M[9][9];//维护的数独棋盘
 };
 #endif // !SudokuMaker_H

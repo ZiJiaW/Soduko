@@ -15,6 +15,8 @@ void SudokuMaker::RequestInit(int n)
 }
 bool SudokuMaker::check(int r, int l, int num)
 {
+    int a = 3 * (r / 3);
+    int b = 3 * (l / 3);
     for (int i = 0; i < 9; ++i)
     {
         if (i != r && M[i][l] == num)
@@ -22,9 +24,9 @@ bool SudokuMaker::check(int r, int l, int num)
         if (i != l && M[r][i] == num)
             return false;
     }
-    for (int i = 3 * (r / 3); i < 3 * (r / 3) + 3; ++i)
+    for (int i = a; i < a + 3; ++i)
     {
-        for (int j = 3 * (l / 3); j < 3 * (l / 3) + 3; ++j)
+        for (int j = b; j < b + 3; ++j)
         {
             if ((i != r || j != l) && M[i][j] == num)
                 return false;
@@ -32,7 +34,7 @@ bool SudokuMaker::check(int r, int l, int num)
     }
     return true;
 }
-bool SudokuMaker::fill(int r, int l, fstream &file)//it starts from (0,1) instead of (0,0).
+bool SudokuMaker::fill(int r, int l)//it starts from (0,1) instead of (0,0).
 {
     int nr = l == 8 ? r + 1 : r;
     int nl = l == 8 ? 0 : l + 1;
@@ -46,31 +48,19 @@ bool SudokuMaker::fill(int r, int l, fstream &file)//it starts from (0,1) instea
             count++;
             if (count == maxnum)
             {
-                SudokuOutput(M, false, file);
-                /*{
-                    for (int i = 0; i < 9; ++i)
-                    {
-                        for (int j = 0; j < 9; ++j)
-                        {
-                            if (j == 8)
-                                cout << M[i][j] << endl;
-                            else
-                                cout << M[i][j] << ' ';
-                        }
-                    }
-                }*/
+                SudokuOutput(M, false);
                 return true;
             }
             else
             {
-                SudokuOutput(M, true, file);
+                SudokuOutput(M, true);
                 M[r][l] = 0;
                 continue;
             }
         }
         else 
         {
-            if (SudokuMaker::fill(nr, nl, file))
+            if (SudokuMaker::fill(nr, nl))
                 return true;
             else
             {
