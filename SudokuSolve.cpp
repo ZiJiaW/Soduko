@@ -10,19 +10,6 @@ void SudokuSolve::ProblemInit(int p[9][9])
 		}
 	}
 }
-void SudokuSolve::showSolution()
-{
-	for (int i = 0; i < 9; ++i)
-	{
-		for (int j = 0; j < 9; ++j)
-		{
-			if (j == 8)
-				cout << problem[i][j] << endl;
-			else
-				cout << problem[i][j] << ' ';
-		}
-	}
-}
 int (*SudokuSolve::getSolution())[9]
 {
     int(*p)[9] = new int[9][9];

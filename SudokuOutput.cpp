@@ -1,9 +1,7 @@
 #include "stdafx.h"
 using namespace std;
-void SudokuOutput(int p[9][9], bool flag)
+void SudokuOutput(int p[9][9], bool flag, fstream &file)
 {
-    fstream file;
-    file.open("Sudoku.txt", fstream::out | fstream::app);
     if (!file.is_open())
         cerr << "fail to open file!" << endl;
     else
@@ -20,6 +18,5 @@ void SudokuOutput(int p[9][9], bool flag)
         }
         if (flag)
             file << endl;
-        file.close();
     }
 }

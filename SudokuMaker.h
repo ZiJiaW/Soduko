@@ -5,10 +5,9 @@
 using namespace std;
 class SudokuMaker {
 public:
-    bool fill(int r, int l);
+    bool fill(int r, int l, fstream &file);
     bool check(int r, int l, int num);
     void RequestInit(int n);
-    void showMatrix();
 private:
     int maxnum;
     int count;

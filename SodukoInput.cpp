@@ -42,7 +42,6 @@ bool IsDigit(char *in)
 {
     int n = sizeof(in) / sizeof(char);
     bool r = true;
-    //cout << atoi(in) << endl;
     for (int i = 0; i < n&&in[i] != '\0'; ++i)
     {
         r &= (in[i] >= '0'&&in[i] <= '9');

@@ -13,19 +13,6 @@ void SudokuMaker::RequestInit(int n)
     maxnum = n;
     count = 0;
 }
-void SudokuMaker::showMatrix()
-{
-    for (int i = 0; i < 9; ++i)
-    {
-        for (int j = 0; j < 9; ++j)
-        {
-            if (j == 8)
-                cout << M[i][j] << endl;
-            else
-                cout << M[i][j] << ' ';
-        }
-    }
-}
 bool SudokuMaker::check(int r, int l, int num)
 {
     for (int i = 0; i < 9; ++i)
@@ -45,7 +32,7 @@ bool SudokuMaker::check(int r, int l, int num)
     }
     return true;
 }
-bool SudokuMaker::fill(int r, int l)//it starts from (0,1) instead of (0,0).
+bool SudokuMaker::fill(int r, int l, fstream &file)//it starts from (0,1) instead of (0,0).
 {
     int nr = l == 8 ? r + 1 : r;
     int nl = l == 8 ? 0 : l + 1;
@@ -56,24 +43,34 @@ bool SudokuMaker::fill(int r, int l)//it starts from (0,1) instead of (0,0).
         M[r][l] = k;
         if (r == 8 && l == 8)
         {
-            //SudokuMaker::showMatrix();
-            //cout << endl;
             count++;
             if (count == maxnum)
             {
-                SudokuOutput(M, false);
+                SudokuOutput(M, false, file);
+                /*{
+                    for (int i = 0; i < 9; ++i)
+                    {
+                        for (int j = 0; j < 9; ++j)
+                        {
+                            if (j == 8)
+                                cout << M[i][j] << endl;
+                            else
+                                cout << M[i][j] << ' ';
+                        }
+                    }
+                }*/
                 return true;
             }
             else
             {
-                SudokuOutput(M, true);
+                SudokuOutput(M, true, file);
                 M[r][l] = 0;
                 continue;
             }
         }
         else 
         {
-            if (SudokuMaker::fill(nr, nl))
+            if (SudokuMaker::fill(nr, nl, file))
                 return true;
             else
             {
