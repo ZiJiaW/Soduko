@@ -2,5 +2,5 @@
 #ifndef SudokuOutput_H
 #define SudokuOutput_H
 using namespace std;
-void SudokuOutput(int p[9][9], bool flag);//, fstream &file
+void SudokuOutput(char *ret, int maxnum, char *ret2);
 #endif // !SudokuOutput_H

@@ -1,29 +1,34 @@
 #include "stdafx.h"
 using namespace std;
-void SudokuOutput(int p[9][9], bool flag)
+void SudokuOutput(char *ret,int maxnum, char *ret2)
 {
-//    if (!file.is_open())
-//        cerr << "fail to open file!" << endl;
-//    else
+    int j = 0, i = 0;
+    while (i < maxnum)
     {
-        for (int i = 0; i < 9; ++i)
+        if (i == maxnum - 1)
         {
-            for (int j = 0; j < 9; ++j)
-            {
-                if (j == 8)
-                {
-                    putchar(char(p[i][j] + '0'));
-                    putchar('\n');
-                }
-                else
-                    //file << char(p[i][j] + '0') << ' ';
-                {
-                    putchar(char(p[i][j] + '0'));
-                    putchar(' ');
-                }
-            }
+            ret2[j] = ret[i];
+            ret2[j + 1] = '\0';
         }
-        if (flag)
-            putchar('\n');
+        else if (i % 81 == 80)
+        {
+            ret2[j] = ret[i];
+            ret2[j + 1] = '\n';
+            ret2[j + 2] = '\n';
+            j += 3;
+        }
+        else if (i % 9 == 8)
+        {
+            ret2[j] = ret[i];
+            ret2[j + 1] = '\n';
+            j += 2;
+        }
+        else
+        {
+            ret2[j] = ret[i];
+            ret2[j + 1] = ' ';
+            j += 2;
+        }
+        ++i;
     }
 }

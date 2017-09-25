@@ -5,7 +5,7 @@
 using namespace std;
 class SudokuMaker {
 public:
-    bool fill(int r, int l);//递归填数
+    bool fill(int r, int l, char *ret);//递归填数
     bool check(int r, int l, int num);//判断在[r,l]处放入num是否符合数独规则
     void RequestInit(int n);//初始化需求
 private:

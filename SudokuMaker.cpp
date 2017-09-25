@@ -34,7 +34,7 @@ bool SudokuMaker::check(int r, int l, int num)
     }
     return true;
 }
-bool SudokuMaker::fill(int r, int l)//it starts from (0,1) instead of (0,0).
+bool SudokuMaker::fill(int r, int l, char *ret)
 {
     int nr = l == 8 ? r + 1 : r;
     int nl = l == 8 ? 0 : l + 1;
@@ -43,24 +43,37 @@ bool SudokuMaker::fill(int r, int l)//it starts from (0,1) instead of (0,0).
         if (!SudokuMaker::check(r, l, k))
             continue;
         M[r][l] = k;
-        if (r == 8 && l == 8)
+        if (r == 8 && l == 8)//到达最后一个位置
         {
             count++;
-            if (count == maxnum)
+            if (count == maxnum)//若已生成要求数目的数独终局，则输出终局并结束递归
             {
-                SudokuOutput(M, false);
+                for (int i = 0; i < 9; ++i)
+                {
+                    for (int j = 0; j < 9; ++j)
+                    {
+                        ret[9 * i + j + 81 * (count-1)] = char(M[i][j] + '0');
+                    }
+                }
                 return true;
             }
             else
             {
-                SudokuOutput(M, true);
+                //生成数目不够，则输出并恢复[r,l]处的值，并试填下一个
+                for (int i = 0; i < 9; ++i)
+                {
+                    for (int j = 0; j < 9; ++j)
+                    {
+                        ret[9 * i + j + 81 * (count-1)] = char(M[i][j] + '0');
+                    }
+                }
                 M[r][l] = 0;
                 continue;
             }
         }
         else 
         {
-            if (SudokuMaker::fill(nr, nl))
+            if (SudokuMaker::fill(nr, nl, ret))//递归求解下一个位置
                 return true;
             else
             {
