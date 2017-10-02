@@ -1,6 +1,6 @@
 #include"stdafx.h"
 using namespace std;
-vector<int(*)[9]> SodukoInput(char * filename)
+vector<int(*)[9]> SudokuInput(char * filename)
 {
 	ifstream file;
 	file.open(filename, ios::in);

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 using namespace std;
-void SudokuSolve::ProblemInit(int p[9][9])
+void SudokuSolver::ProblemInit(int p[9][9])
 {
 	for (int i = 0; i < 9; ++i)
 	{
@@ -10,7 +10,11 @@ void SudokuSolve::ProblemInit(int p[9][9])
 		}
 	}
 }
+<<<<<<< HEAD:SudokuSolver.cpp
+int (*SudokuSolver::GetSolution())[9]
+=======
 int (*SudokuSolve::getSolution())[9]
+>>>>>>> ec2137a00db2bb2af1a748e82166cc33c221a969:SudokuSolve.cpp
 {
     int(*p)[9] = new int[9][9];
     for (int i = 0; i < 9; ++i)
@@ -25,7 +29,7 @@ int (*SudokuSolve::getSolution())[9]
 /*
 check if filling (r, l) with num is ok.
 */
-bool SudokuSolve::check(int r, int l, int num)
+bool SudokuSolver::Check(int r, int l, int num)
 {
 	for (int i = 0; i < 9; ++i)
 	{
@@ -47,13 +51,13 @@ bool SudokuSolve::check(int r, int l, int num)
 /*
 recursively solve the problem.
 */
-bool SudokuSolve::Solve(int r, int l)
+bool SudokuSolver::Solve(int r, int l)
 {
 	int nr = l == 8 ? r + 1 : r;
 	int nl = l == 8 ? 0 : l + 1;
 	if (problem[r][l] != 0 && nr < 9)//(r, l) already has a number
 	{
-		if (SudokuSolve::Solve(nr, nl))
+		if (SudokuSolver::Solve(nr, nl))
 			return true;
 		else
 			return false;
@@ -63,15 +67,20 @@ bool SudokuSolve::Solve(int r, int l)
 	// now problem[i][j] == 0, try to fill it.
 	for (int k = 1; k < 10; ++k)
 	{
-		if (!SudokuSolve::check(r, l, k))
+		if (!SudokuSolver::Check(r, l, k))
 			continue;
 		problem[r][l] = k;
 		if (r == 8 && l == 8)//problem solved
 			return true;
-		if (SudokuSolve::Solve(nr, nl))
+		if (SudokuSolver::Solve(nr, nl))
 			return true;
 		else
 			problem[r][l] = 0;//k is bad, try k+1.
 	}
 	return false;//can't find a k.
+}
+
+bool SudokuSolver::StartSolving()
+{
+    return SudokuSolver::Solve(0, 0);
 }

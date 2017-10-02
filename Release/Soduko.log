@@ -1,2 +1,13 @@
+<<<<<<< HEAD
+﻿  Sudoku.cpp
+  正在生成代码
+  46 of 234 functions (19.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    26 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  Soduko.vcxproj -> E:\visual studio 2017 project\Soduko\Release\Soduko.exe
+  Soduko.vcxproj -> E:\visual studio 2017 project\Soduko\Release\Soduko.pdb (Full PDB)
+=======
 ﻿  Soduko.cpp
 Soduko.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+>>>>>>> ec2137a00db2bb2af1a748e82166cc33c221a969

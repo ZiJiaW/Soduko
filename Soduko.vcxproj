@@ -85,9 +85,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
+<<<<<<< HEAD
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+=======
       <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+>>>>>>> ec2137a00db2bb2af1a748e82166cc33c221a969
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -147,16 +151,21 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SodukoInput.h" />
+    <ClInclude Include="SudokuInput.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SudokuMaker.h" />
+<<<<<<< HEAD
+    <ClInclude Include="FormatTransform.h" />
+    <ClInclude Include="SudokuSolver.h" />
+=======
     <ClInclude Include="SudokuOutput.h" />
     <ClInclude Include="SudokuSolve.h" />
+>>>>>>> ec2137a00db2bb2af1a748e82166cc33c221a969
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Soduko.cpp" />
-    <ClCompile Include="SodukoInput.cpp" />
+    <ClCompile Include="Sudoku.cpp" />
+    <ClCompile Include="SudokuInput.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -164,8 +173,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SudokuMaker.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="FormatTransform.cpp" />
+    <ClCompile Include="SudokuSolver.cpp" />
+=======
     <ClCompile Include="SudokuOutput.cpp" />
     <ClCompile Include="SudokuSolve.cpp" />
+>>>>>>> ec2137a00db2bb2af1a748e82166cc33c221a969
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
