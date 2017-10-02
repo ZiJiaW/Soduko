@@ -1,6 +1,6 @@
 #include "stdafx.h"
 using namespace std;
-void FormatTransform(char *from,int maxnum, char *to)
+void FormatTransform(char *from, int maxnum, char *to)
 {
     int j = 0, i = 0;
     while (i < maxnum)
