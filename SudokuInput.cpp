@@ -1,4 +1,5 @@
 #include"stdafx.h"
+#include "SudokuInput.h"
 using namespace std;
 vector<int(*)[9]> SudokuInput(char * filename)
 {

@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "SudokuMaker.h"
 using namespace std;
 void SudokuMaker::RequestInit(int n)
 {

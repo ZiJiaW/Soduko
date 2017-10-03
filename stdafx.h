@@ -11,8 +11,3 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <cstdlib>
-#include "SudokuInput.h"
-#include "SudokuSolver.h"
-#include "SudokuMaker.h"
-#include "FormatTransform.h"

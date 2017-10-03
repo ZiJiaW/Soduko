@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "FormatTransform.h"
 using namespace std;
 void FormatTransform(char *from, int maxnum, char *to)
 {

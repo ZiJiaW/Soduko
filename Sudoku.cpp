@@ -1,4 +1,8 @@
 #include "stdafx.h"
+#include "SudokuInput.h"
+#include "SudokuSolver.h"
+#include "SudokuMaker.h"
+#include "FormatTransform.h"
 using namespace std;
 const int maxNum = 1000000;
 char result[maxNum * 81 + 1];
@@ -7,7 +11,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        cerr << "illegal input!1" << endl;
+        cerr << "illegal input!" << endl;
         return 0;
     }
     if (strcmp(argv[1], "-s") == 0)
@@ -25,7 +29,7 @@ int main(int argc, char *argv[])
                 cout << "No Solution in problem NO." << i + 1 << endl;
                 return 0;
             }
-            int(*r)[9] = solution.getSolution();
+            int(*r)[9] = solution.GetSolution();
             for (int k = 0; k < 9; ++k)
             {
                 for (int l = 0; l < 9; ++l)
@@ -42,7 +46,7 @@ int main(int argc, char *argv[])
     {
         if (!IsDigit(argv[2]))
         {
-            cerr << "illegal input!2" << endl;
+            cerr << "illegal input!" << endl;
             return 0;
         }
         FILE *file;
@@ -55,6 +59,6 @@ int main(int argc, char *argv[])
         fclose(file);
     }
     else
-        cerr << "illegal input!3" << endl;
+        cerr << "illegal input!" << endl;
     return 0;
 }

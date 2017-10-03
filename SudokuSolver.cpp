@@ -1,6 +1,7 @@
 #include "stdafx.h"
+#include "SudokuSolver.h"
 using namespace std;
-void SudokuSolver::ProblemInit(int p[9][9])
+void SudokuSolver::ProblemInit(int p[][9])
 {
     for (int i = 0; i < 9; ++i)
     {
@@ -10,9 +11,9 @@ void SudokuSolver::ProblemInit(int p[9][9])
         }
     }
 }
-int(*SudokuSolver::getSolution())[9]
+int (*SudokuSolver::GetSolution())[9]
 {
-    int(*p)[9] = new int[9][9];
+    int (*p)[9] = new int[9][9];
     for (int i = 0; i < 9; ++i)
     {
         for (int j = 0; j < 9; ++j)
