@@ -5,7 +5,7 @@
 #include "FormatTransform.h"
 using namespace std;
 const int maxNum = 1000000;
-char result[maxNum * 81 + 1];
+char result[maxNum * 81];
 char finalresult[maxNum*(81 * 2 + 1)];
 int main(int argc, char *argv[])
 {
@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
                 cout << "No Solution in problem NO." << i + 1 << endl;
                 return 0;
             }
-            int(*r)[9] = solution.GetSolution();
+            int r[9][9];
+            solution.GetSolution(r);
             for (int k = 0; k < 9; ++k)
             {
                 for (int l = 0; l < 9; ++l)
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
                     result[9 * k + l + 81 * i] = char(r[k][l] + '0');
                 }
             }
+            delete[] *p;
         }
         FormatTransform(result, i * 81, finalresult);
         fputs(finalresult, file);

@@ -6,7 +6,7 @@ class SudokuSolver {
 public:
     bool StartSolving();
     void ProblemInit(int p[][9]);//初始化
-    int (*GetSolution())[9];//返回解
+    void GetSolution(int p[][9]);//返回解
 private:
     int problem[9][9];
     bool Solve(int r, int l);//递归填数

@@ -11,9 +11,8 @@ void SudokuSolver::ProblemInit(int p[][9])
         }
     }
 }
-int (*SudokuSolver::GetSolution())[9]
+void SudokuSolver::GetSolution(int p[][9])
 {
-    int (*p)[9] = new int[9][9];
     for (int i = 0; i < 9; ++i)
     {
         for (int j = 0; j < 9; ++j)
@@ -21,7 +20,6 @@ int (*SudokuSolver::GetSolution())[9]
             p[i][j] = problem[i][j];
         }
     }
-    return p;
 }
 /*
 check if filling (r, l) with num is ok.
